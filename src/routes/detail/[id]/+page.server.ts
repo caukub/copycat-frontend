@@ -4,7 +4,7 @@ import type { PageLoad } from './$types';
 export const load: PageLoad = async ({ params }) => {
 	const id = params.id;
 	const res = await fetch(
-		`/api/frontend/detail/${id}`
+		`http://localhost/api/frontend/detail/${id}`
 	);
 	const json = await res.json();
 

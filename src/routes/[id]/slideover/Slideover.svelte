@@ -60,8 +60,8 @@
 	}
 
 	async function fetchData() {
-		const res = await fetch(`/api/all/${id}`);
-		const leaksRes = await fetch(`/api/leaks/${id}`);
+		const res = await fetch(`http://localhost:80/api/all/${id}`);
+		const leaksRes = await fetch(`http://localhost:80/api/leaks/${id}`);
 
 		const json = await res.json();
 

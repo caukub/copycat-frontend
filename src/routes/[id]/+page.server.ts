@@ -2,7 +2,7 @@ import type { PageLoad } from './$types';
 import { redirect } from '@sveltejs/kit';
 
 export const load: PageLoad = async ({ params }) => {
-	const API_URL = `/api/frontend/paste/${params.id}`;
+	const API_URL = `http://localhost:80/api/frontend/paste/${params.id}`;
 
 	try {
 		const res = await fetch(API_URL);
