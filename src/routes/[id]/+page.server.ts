@@ -2,7 +2,7 @@ import type { PageLoad } from './$types';
 import { redirect } from '@sveltejs/kit';
 
 export const load: PageLoad = async ({ params }) => {
-	const API_URL = `http://localhost:8080/api/frontend/paste/${params.id}`;
+	const API_URL = `/api/frontend/paste/${params.id}`;
 
 	try {
 		const res = await fetch(API_URL);
@@ -16,7 +16,7 @@ export const load: PageLoad = async ({ params }) => {
 			throw redirect(303, '/');
 		}
 	} catch (error) {
-		console.info(error);
+		console.debug("Received expected error:", error);
 		throw redirect(303, '/');
 	}
 };
