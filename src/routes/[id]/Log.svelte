@@ -1,0 +1,147 @@
+<script>
+	import Slideover from './slideover/Slideover.svelte';
+	import { onMount } from 'svelte';
+	export let data;
+
+	let showSlideover = false;
+
+	onMount(() => {
+		window.addEventListener('click', (event) => {
+			if (event.shiftKey) {
+				showSlideover = !showSlideover;
+			}
+		});
+	});
+</script>
+
+<Slideover bind:showSlideover id={data['id']} />
+
+<div class="mb-6 mt-3 rounded bg-hostify-blue px-6 py-2 text-white">
+	<div class="text-2xl">
+		<div class="mb-1.5 flex items-center">
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				viewBox="0 0 24 24"
+				fill="currentColor"
+				class="mr-1.5 h-6 w-6"
+			>
+				<path
+					fill-rule="evenodd"
+					d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm8.706-1.442c1.146-.573 2.437.463 2.126 1.706l-.709 2.836.042-.02a.75.75 0 01.67 1.34l-.04.022c-1.147.573-2.438-.463-2.127-1.706l.71-2.836-.042.02a.75.75 0 11-.671-1.34l.041-.022zM12 9a.75.75 0 100-1.5.75.75 0 000 1.5z"
+					clip-rule="evenodd"
+				/>
+			</svg>
+			<h2 class="font-bold">Analýza</h2>
+		</div>
+		<p class="text-sm font-semibold leading-8">
+			Minecraft verze: <span
+				class="ml-0.5 rounded-sm bg-white px-1.5 py-1 font-bold text-hostify-blue"
+				>{data['version'] ? data['version'] : 'Neznámá'}</span
+			>
+		</p>
+		<p class="text-sm font-semibold leading-8">
+			Platforma: <span class=" ml-0.5 rounded-sm bg-white px-1.5 py-1 font-bold text-hostify-blue"
+				>{data['platform']}</span
+			>
+		</p>
+	</div>
+
+	{#if data.detections.length > 0}
+		<div class="mt-6">
+			<div class="detections">
+				{#each data.detections as detection}
+					<div class="header">
+						<div class="i flex items-center justify-between rounded-sm bg-white font-semibold">
+							<div class="flex items-center py-1">
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									viewBox="0 0 24 24"
+									fill="currentColor"
+									class="my-1 ml-2 mr-1.5 h-5 w-5"
+								>
+									<path
+										fill-rule="evenodd"
+										d="M9.401 3.003c1.155-2 4.043-2 5.197 0l7.355 12.748c1.154 2-.29 4.5-2.599 4.5H4.645c-2.309 0-3.752-2.5-2.598-4.5L9.4 3.003zM12 8.25a.75.75 0 01.75.75v3.75a.75.75 0 01-1.5 0V9a.75.75 0 01.75-.75zm0 8.25a.75.75 0 100-1.5.75.75 0 000 1.5z"
+										clip-rule="evenodd"
+									/>
+								</svg>
+								{detection.header}
+							</div>
+							<div
+								class="mr-1.5 flex items-center rounded-md bg-hostify-blue text-white"
+								class:px-1={detection.detail}
+								class:py-0.5={detection.detail}
+							>
+								{#if detection.detail}
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										viewBox="0 0 20 20"
+										fill="currentColor"
+										class="h-5 w-5"
+										><path
+											fill-rule="evenodd"
+											d="M2 10a.75.75 0 01.75-.75h12.59l-2.1-1.95a.75.75 0 111.02-1.1l3.5 3.25a.75.75 0 010 1.1l-3.5 3.25a.75.75 0 11-1.02-1.1l2.1-1.95H2.75A.75.75 0 012 10z"
+											clip-rule="evenodd"
+										/></svg
+									>
+									{#if detection.detail.includes('://')}
+										<a href={detection.detail} target="_blank">Detail</a>
+									{:else}
+										<a href="/detail/{detection.detail}" target="_blank">Detail</a>
+									{/if}
+								{/if}
+							</div>
+						</div>
+					</div>
+					<div class="my-2 flex">
+						{#if detection.solutions.length > 0}
+							<div class="mr-2 flex items-center font-semibold">Řešení</div>
+						{/if}
+						<div>
+							{#each detection.solutions as solution, i}
+								{#if i + 1 < detection.solutions.length}
+									<div class="solution">{solution}, nebo</div>
+								{:else}
+									<div class="solution">{solution}</div>
+								{/if}
+							{/each}
+						</div>
+					</div>
+				{/each}
+			</div>
+		</div>
+	{/if}
+</div>
+
+<pre class="h-full whitespace-pre-wrap break-words px-2">{@html data.content}</pre>
+
+<style class="postcss">
+	:global(.i) {
+		@apply text-hostify-blue;
+	}
+
+	:global(.w) {
+		@apply text-hostify-yellow;
+	}
+
+	:global(.e) {
+		@apply text-hostify-red;
+	}
+
+	:global(.c) {
+		color: green;
+	}
+
+	:global(.i, .w, .e, .c) {
+		font-weight: 600;
+	}
+
+	pre {
+		font-size: 0.9rem;
+	}
+
+	.solution {
+		border-left: 4px solid #fff;
+		padding-left: 0.75rem;
+	}
+</style>
