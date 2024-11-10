@@ -3,7 +3,7 @@
 
 	export let content: string;
 
-	hljs.configure({ ignoreIllegals: true });
+	hljs.configure({ ignoreUnescapedHTML: true });
 
 	const highlightedContent = hljs.highlightAuto(content).value;
 </script>
