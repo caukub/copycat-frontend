@@ -2,6 +2,7 @@
 	import hljs from 'highlight.js/lib/core';
 
 	export let content: string;
+	console.log(content)
 
 	const highlightedContent = hljs.highlightAuto(content).value;
 </script>
