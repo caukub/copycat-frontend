@@ -3,9 +3,10 @@
 
 	export let content: string;
 
-	hljs.configure({ ignoreUnescapedHTML: true });
+	let hl = hljs
+	hl.configure({ ignoreUnescapedHTML: true });
 
-	const highlightedContent = hljs.highlightAuto(content).value;
+	const highlightedContent = hl.highlightAuto(content).value;
 </script>
 
 <svelte:head>

@@ -1581,10 +1581,4 @@ dialog::backdrop {
 		color: #00f;
 		text-decoration: underline;
 	}
-
-	ol,
-	li,
-	ul {
-		list-style: decimal !important;
-	}
 }
