@@ -6,7 +6,7 @@
 
 <Navbar />
 
-<main class="container mx-auto 2xl:max-w-[calc(screen-2xl - 20px)] max-w-[calc(100vw - 3%)]">
+<main class="container mx-auto">
 	<slot />
 </main>
 
