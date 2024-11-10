@@ -2,7 +2,8 @@
 	import hljs from 'highlight.js/lib/core';
 
 	export let content: string;
-	console.log(content)
+
+	hljs.configure({ ignoreIllegals: true });
 
 	const highlightedContent = hljs.highlightAuto(content).value;
 </script>
