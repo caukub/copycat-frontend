@@ -12,4 +12,4 @@
 		href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css"
 	/>
 </svelte:head>
-<pre class="whitespace-pre-wrap break-words">{@html highlightedContent}</pre>
+<pre class="whitespace-pre-wrap break-words p-4">{@html highlightedContent}</pre>

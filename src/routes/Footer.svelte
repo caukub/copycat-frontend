@@ -23,6 +23,5 @@
 <style>
 	.bd {
 		border-top: 1px solid rgba(0, 0, 0, 0.125);
-		box-shadow: 0 0.5rem 1rem #00000026;
 	}
 </style>

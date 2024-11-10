@@ -16,4 +16,4 @@
 	/>
 </svelte:head>
 
-<pre class="h-full whitespace-pre-wrap break-words">{@html highlightedContent}</pre>
+<pre class="h-full whitespace-pre-wrap break-words p-4">{@html highlightedContent}</pre>
