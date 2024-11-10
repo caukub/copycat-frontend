@@ -22,8 +22,7 @@
 
 <style>
 	.bd {
-		border: 1px solid rgba(0, 0, 0, 0.125);
+		border-top: 1px solid rgba(0, 0, 0, 0.125);
 		box-shadow: 0 0.5rem 1rem #00000026;
-		border-radius: 0.25rem;
 	}
 </style>
