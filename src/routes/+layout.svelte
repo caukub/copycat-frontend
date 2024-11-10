@@ -28,5 +28,13 @@
 			'Segoe UI Emoji',
 			Segoe UI Symbol,
 			'Noto Color Emoji';
+
+      max-width: calc(100vw - 3%);
 	}
+
+  @media (min-width: 1536px) {
+      main {
+          max-width: 1490px;
+      }
+  }
 </style>
