@@ -16,4 +16,10 @@
 	/>
 </svelte:head>
 
-<pre class="h-full whitespace-pre-wrap break-words p-4">{@html highlightedContent}</pre>
+<pre class="h-full whitespace-pre-wrap break-words p-3">{@html highlightedContent}</pre>
+
+<style>
+	pre {
+      border: 1px solid rgba(0, 0, 0, 0.225)
+	}
+</style>

@@ -113,7 +113,7 @@
 	{/if}
 </div>
 
-<pre class="h-full whitespace-pre-wrap break-words px-2">{@html data.content}</pre>
+<pre class="h-full whitespace-pre-wrap break-words px-3">{@html data.content}</pre>
 
 <style class="postcss">
 	:global(.i) {
