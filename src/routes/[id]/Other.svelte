@@ -5,6 +5,8 @@
 
 	let hl = hljs
 
+	content.replace("&gt;", ">");
+
 	const highlightedContent = hl.highlightAuto(content).value;
 </script>
 
