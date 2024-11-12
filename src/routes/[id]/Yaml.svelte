@@ -5,6 +5,7 @@
 	hljs.registerLanguage('yaml', yaml);
 
 	export let content: string;
+	export let id
 
 	const highlightedContent = hljs.highlight(content, { language: 'yaml' }).value;
 </script>

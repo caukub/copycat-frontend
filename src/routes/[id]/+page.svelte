@@ -18,9 +18,9 @@
 {#if data['pasteType'] === PasteType.Log}
 	<Log {data} />
 {:else if data['pasteType'] === PasteType.Json}
-	<Json content={data.content} />
+	<Json content={data.content} id={data.id} />
 {:else if data['pasteType'] === PasteType.Yaml}
-	<Yaml content={data.content} />
+	<Yaml content={data.content} id={data.id} />
 {:else if data['pasteType'] === PasteType.Other}
-	<Other content={data.content} />
+	<Other content={data.content} id={data.id} />
 {/if}

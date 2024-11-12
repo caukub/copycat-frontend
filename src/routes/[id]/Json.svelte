@@ -1,10 +1,12 @@
 <script lang="ts">
 	import hljs from 'highlight.js/lib/core';
 	import json from 'highlight.js/lib/languages/json';
+	import RawButton from './RawButton.svelte';
 
 	hljs.registerLanguage('json', json);
 
 	export let content: string;
+	export let id
 
 	const highlightedContent = hljs.highlight(content, { language: 'json' }).value;
 </script>
@@ -19,6 +21,7 @@
 	/>
 </svelte:head>
 
+<RawButton {id}/>
 <pre class="h-full whitespace-pre-wrap break-words p-3">{@html highlightedContent}</pre>
 
 <style>

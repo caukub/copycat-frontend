@@ -129,8 +129,6 @@
 									>
 									{#if detection.detail.includes('://')}
 										<a href={detection.detail} target="_blank">Detail</a>
-									{:else}
-										<a href="/detail/{detection.detail}" target="_blank">Detail</a>
 									{/if}
 								{/if}
 							</div>

@@ -5,6 +5,8 @@
 
 	let hl = hljs;
 
+	export let id
+
 	const highlightedContent = hl.highlightAuto(content).value;
 </script>
 
