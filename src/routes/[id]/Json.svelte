@@ -21,7 +21,7 @@
 	/>
 </svelte:head>
 
-<RawButton {id}/>
+<RawButton bind:id={id}/>
 <pre class="h-full whitespace-pre-wrap break-words p-3">{@html highlightedContent}</pre>
 
 <style>

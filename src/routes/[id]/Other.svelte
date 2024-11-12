@@ -1,5 +1,6 @@
 <script lang="ts">
 	import hljs from 'highlight.js/lib/core';
+	import RawButton from './RawButton.svelte';
 
 	export let content: string;
 
@@ -19,7 +20,9 @@
 		referrerpolicy="no-referrer"
 	/>
 </svelte:head>
-<pre class="whitespace-pre-wrap break-words p-3">{@html highlightedContent}</pre>
+
+<RawButton bind:id={id}/>
+<pre class="whitespace-pre-wrap break-words p-3">{highlightedContent}</pre>
 
 <style>
 	pre {

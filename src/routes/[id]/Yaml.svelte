@@ -1,6 +1,7 @@
 <script lang="ts">
 	import hljs from 'highlight.js/lib/core';
 	import yaml from 'highlight.js/lib/languages/yaml';
+	import RawButton from './RawButton.svelte';
 
 	hljs.registerLanguage('yaml', yaml);
 
@@ -20,7 +21,8 @@
 	/>
 </svelte:head>
 
-<pre class="h-full whitespace-pre-wrap break-words p-3">{@html highlightedContent}</pre>
+<RawButton bind:id={id}/>
+<pre class="h-full whitespace-pre-wrap break-words p-3">{highlightedContent}</pre>
 
 <style>
 	pre {

@@ -14,7 +14,7 @@
 	});
 </script>
 
-<Slideover bind:showSlideover id={data['id']} />
+<Slideover bind:showSlideover id={data.id} />
 
 <div class="mb-6 mt-3 rounded bg-hostify-blue px-3 py-2 text-white sm:px-6">
 	<div class="text-2xl">
