@@ -54,11 +54,12 @@
 
 					<a
 						href="/"
+						target="_blank"
 						type="button"
 						class="relative inline-flex items-center gap-x-1.5 rounded-md bg-white px-1.5 py-2 font-semibold text-hostify-blue shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-hostify-blue sm:px-3"
 					>
 						<svg
-							class="-ml-0.5 h-5 w-5 sm:ml-0.5"
+							class="-ml-0.5 h-4 w-4 sm:h-5 sm:w-5 sm:ml-0.5"
 							viewBox="0 0 20 20"
 							fill="currentColor"
 							aria-hidden="true"
@@ -67,7 +68,12 @@
 								d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z"
 							/>
 						</svg>
-						Nový log
+						<span class="hidden sm:block">
+							Nový log
+						</span>
+						<span class="sm:hidden">
+							Log
+						</span>
 					</a>
 				</div>
 			</div>
