@@ -38,12 +38,3 @@
 		}
 	}
 </style>
-
-
-<noscript>
-	<style lang="postcss">
-      :global(.nojs-hide) {
-          display: none;
-      }
-	</style>
-</noscript>

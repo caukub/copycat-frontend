@@ -56,7 +56,7 @@
 				</a>
 				<a
 					on:click={(showSlideover = !showSlideover)}
-					class="ml-1.5 flex cursor-pointer rounded-sm bg-white px-1.5 py-0.5 font-bold text-hostify-blue"
+					class="nojs-hide ml-1.5 flex cursor-pointer rounded-sm bg-white px-1.5 py-0.5 font-bold text-hostify-blue"
 				>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"

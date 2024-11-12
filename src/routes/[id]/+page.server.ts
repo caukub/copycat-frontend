@@ -1,6 +1,6 @@
 import { redirect } from '@sveltejs/kit';
 
-export async function load({ params }){
+export async function load({ params }) {
 	const API_URL = `http://nginx:80/api/frontend/paste/${params.id}`;
 
 	try {
@@ -10,9 +10,9 @@ export async function load({ params }){
 			let json = await res.json();
 			json['id'] = params.id;
 
-			if (json["error"] === true) {
-				console.debug("Received expected error")
-				redirect(303, '/')
+			if (json['error'] === true) {
+				console.debug('Received expected error');
+				redirect(303, '/');
 			}
 
 			return json;
