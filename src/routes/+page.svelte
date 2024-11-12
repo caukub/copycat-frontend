@@ -87,10 +87,10 @@
 		<div class="bd mx-auto max-w-3xl">
 			<div class="bb flex items-center justify-between py-3">
 				<p class="ml-3 font-semibold">
-					Vložte log níže <span class="to-hide">nebo</span>
+					Vložte log níže <span class="nojs-hide">nebo</span>
 					<button
 						on:click|preventDefault={selectLogFile}
-						class="file-upload bbd to-hide ml-1 cursor-pointer rounded px-1 py-1 text-black text-white"
+						class="file-upload bbd nojs-hide ml-1 cursor-pointer rounded px-1 py-1 text-black text-white"
 					>
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
@@ -151,14 +151,6 @@
 		</div>
 	</div>
 </form>
-
-<noscript>
-	<style>
-		.to-hide {
-			display: none;
-		}
-	</style>
-</noscript>
 
 <style>
 	textarea {

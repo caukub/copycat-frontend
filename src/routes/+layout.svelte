@@ -38,3 +38,12 @@
 		}
 	}
 </style>
+
+
+<noscript>
+	<style>
+      :global(.nojs-hide) {
+          display: none;
+      }
+	</style>
+</noscript>

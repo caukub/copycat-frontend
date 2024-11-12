@@ -72,7 +72,7 @@
 						/>
 					</svg>
 
-					<span id="nojs-hide">Detail</span>
+					Detail
 				</a>
 			</div>
 		</div>
@@ -188,11 +188,3 @@
 		padding-left: 0.75rem;
 	}
 </style>
-
-<noscript>
-	<style>
-      #nojs-hide {
-					display: none;
-			}
-	</style>
-</noscript>
