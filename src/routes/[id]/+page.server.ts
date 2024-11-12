@@ -16,7 +16,7 @@ export const load: PageLoad = async ({ params }) => {
 			throw redirect(303, '/');
 		}
 	} catch (error) {
-		console.debug("Received expected error:", error);
+		console.debug('Received expected error:', error);
 		throw redirect(303, '/');
 	}
 };

@@ -12,5 +12,4 @@
 </div>
 
 <style class="postcss">
-	@import 'water.css';
 </style>

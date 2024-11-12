@@ -4,8 +4,6 @@
 	let selectLogFile = () => {};
 
 	onMount(async () => {
-		document.getElementsByClassName('file-upload')[0].classList.remove('hidden');
-		document.getElementsByClassName('file-upload')[1].classList.remove('hidden');
 		const pasteArea = document.getElementById('log');
 
 		pasteArea.focus();
@@ -89,10 +87,10 @@
 		<div class="bd mx-auto max-w-3xl">
 			<div class="bb flex items-center justify-between py-3">
 				<p class="ml-3 font-semibold">
-					Vložte log níže <span class="file-upload hidden">nebo</span>
+					Vložte log níže <span class="to-hide">nebo</span>
 					<button
 						on:click|preventDefault={selectLogFile}
-						class="file-upload bbd ml-1 hidden cursor-pointer rounded px-1 py-1 text-black text-white"
+						class="file-upload bbd to-hide ml-1 cursor-pointer rounded px-1 py-1 text-black text-white"
 					>
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
@@ -153,6 +151,14 @@
 		</div>
 	</div>
 </form>
+
+<noscript>
+	<style>
+		.to-hide {
+			display: none;
+		}
+	</style>
+</noscript>
 
 <style>
 	textarea {

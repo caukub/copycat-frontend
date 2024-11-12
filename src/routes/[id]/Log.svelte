@@ -16,22 +16,64 @@
 
 <Slideover bind:showSlideover id={data['id']} />
 
-<div class="mb-6 mt-3 rounded bg-hostify-blue px-6 py-2 text-white">
+<div class="mb-6 mt-3 rounded bg-hostify-blue px-3 py-2 text-white sm:px-6">
 	<div class="text-2xl">
-		<div class="mb-1.5 flex items-center">
-			<svg
-				xmlns="http://www.w3.org/2000/svg"
-				viewBox="0 0 24 24"
-				fill="currentColor"
-				class="mr-1.5 h-6 w-6"
-			>
-				<path
-					fill-rule="evenodd"
-					d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm8.706-1.442c1.146-.573 2.437.463 2.126 1.706l-.709 2.836.042-.02a.75.75 0 01.67 1.34l-.04.022c-1.147.573-2.438-.463-2.127-1.706l.71-2.836-.042.02a.75.75 0 11-.671-1.34l.041-.022zM12 9a.75.75 0 100-1.5.75.75 0 000 1.5z"
-					clip-rule="evenodd"
-				/>
-			</svg>
-			<h2 class="font-bold">Analýza</h2>
+		<div class="mb-1.5 flex justify-between">
+			<div class="flex items-center">
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					viewBox="0 0 24 24"
+					fill="currentColor"
+					class="mr-1.5 h-6 w-6"
+				>
+					<path
+						fill-rule="evenodd"
+						d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm8.706-1.442c1.146-.573 2.437.463 2.126 1.706l-.709 2.836.042-.02a.75.75 0 01.67 1.34l-.04.022c-1.147.573-2.438-.463-2.127-1.706l.71-2.836-.042.02a.75.75 0 11-.671-1.34l.041-.022zM12 9a.75.75 0 100-1.5.75.75 0 000 1.5z"
+						clip-rule="evenodd"
+					/>
+				</svg>
+				<h2 class="font-bold">Analýza</h2>
+			</div>
+			<div class="flex items-center text-sm font-semibold">
+				<a
+					href={'/raw/' + data.id}
+					class="flex cursor-pointer rounded-sm bg-white px-1.5 py-0.5 font-bold text-hostify-blue"
+				>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 0 16 16"
+						fill="currentColor"
+						class="mr-1 mt-1 size-4"
+					>
+						<path
+							fill-rule="evenodd"
+							d="M2 2.75A.75.75 0 0 1 2.75 2h9.5a.75.75 0 0 1 0 1.5h-9.5A.75.75 0 0 1 2 2.75ZM2 6.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 0 1.5h-5.5A.75.75 0 0 1 2 6.25Zm0 3.5A.75.75 0 0 1 2.75 9h3.5a.75.75 0 0 1 0 1.5h-3.5A.75.75 0 0 1 2 9.75ZM9.22 9.53a.75.75 0 0 1 0-1.06l2.25-2.25a.75.75 0 0 1 1.06 0l2.25 2.25a.75.75 0 0 1-1.06 1.06l-.97-.97v5.69a.75.75 0 0 1-1.5 0V8.56l-.97.97a.75.75 0 0 1-1.06 0Z"
+							clip-rule="evenodd"
+						/>
+					</svg>
+					Raw
+				</a>
+				<a
+					on:click={(showSlideover = !showSlideover)}
+					class="ml-1.5 flex cursor-pointer rounded-sm bg-white px-1.5 py-0.5 font-bold text-hostify-blue"
+				>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 0 16 16"
+						fill="currentColor"
+						class="mr-1 mt-0.5 size-4"
+					>
+						<path d="M6 7.5a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Z" />
+						<path
+							fill-rule="evenodd"
+							d="M4 2a1.5 1.5 0 0 0-1.5 1.5v9A1.5 1.5 0 0 0 4 14h8a1.5 1.5 0 0 0 1.5-1.5V6.621a1.5 1.5 0 0 0-.44-1.06L9.94 2.439A1.5 1.5 0 0 0 8.878 2H4Zm3.5 2.5a3 3 0 1 0 1.524 5.585l1.196 1.195a.75.75 0 1 0 1.06-1.06l-1.195-1.196A3 3 0 0 0 7.5 4.5Z"
+							clip-rule="evenodd"
+						/>
+					</svg>
+
+					Detail
+				</a>
+			</div>
 		</div>
 		<p class="text-sm font-semibold leading-8">
 			Minecraft verze: <span
@@ -40,7 +82,7 @@
 			>
 		</p>
 		<p class="text-sm font-semibold leading-8">
-			Platforma: <span class=" ml-0.5 rounded-sm bg-white px-1.5 py-1 font-bold text-hostify-blue"
+			Platforma: <span class="ml-0.5 rounded-sm bg-white px-1.5 py-1 font-bold text-hostify-blue"
 				>{data['platform']}</span
 			>
 		</p>

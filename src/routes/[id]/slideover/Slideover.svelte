@@ -5,6 +5,8 @@
 	import SearchBar from './SearchBar.svelte';
 	export let id: string;
 
+	export let showLeaks = false;
+
 	export let showSlideover: boolean = false;
 	let fetched = false;
 
@@ -93,7 +95,11 @@
 						<div class="flex h-full flex-col overflow-y-scroll bg-white shadow-xl">
 							<div class="p-6">
 								<div class="flex items-start justify-between">
-									<h2 class="text-base font-semibold leading-6 text-gray-900" id="slide-over-title">
+									<h2
+										on:dblclick={(showLeaks = !showLeaks)}
+										class="text-base font-semibold leading-6 text-gray-900"
+										id="slide-over-title"
+									>
 										Detaily
 									</h2>
 									<div class="ml-3 flex h-7 items-center">
@@ -135,11 +141,13 @@
 											on:click={() => changeSlideoverState(SlideoverState.Ports)}
 											active={slideoverState === SlideoverState.Ports}
 										/>
-										<Tab
-											header="Leaky"
-											on:click={() => changeSlideoverState(SlideoverState.Leaks)}
-											active={slideoverState === SlideoverState.Leaks}
-										/>
+										{#if showLeaks}
+											<Tab
+												header="Leaky"
+												on:click={() => changeSlideoverState(SlideoverState.Leaks)}
+												active={slideoverState === SlideoverState.Leaks}
+											/>
+										{/if}
 									</nav>
 								</div>
 							</div>

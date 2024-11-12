@@ -6,7 +6,7 @@
 
 {#if shown}
 	<li>
-		<div class="group relative flex items-center px-5 py-6">
+		<div class="group relative flex items-center px-3 py-2 sm:px-5 sm:py-6">
 			<div class="-m-1 block flex-1 p-1">
 				<div class="absolute inset-0 group-hover:bg-gray-50" aria-hidden="true"></div>
 				<div class="relative flex min-w-0 flex-1 items-center">
