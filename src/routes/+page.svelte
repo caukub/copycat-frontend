@@ -109,7 +109,9 @@
 						<span class="text-black">Nahrajte soubor</span></button
 					>
 				</p>
-				<button class="flex justify-center items-center upload-btns mr-2 rounded font-semibold text-white">
+				<button
+					class="upload-btns mr-2 flex items-center justify-center rounded font-semibold text-white"
+				>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						viewBox="0 0 448 512"
@@ -134,7 +136,10 @@
 			></textarea>
 
 			<div class="bt flex items-center justify-end py-3">
-				<button type="submit" class="flex justify-center items-center upload-btns mr-2 rounded font-semibold text-white">
+				<button
+					type="submit"
+					class="upload-btns mr-2 flex items-center justify-center rounded font-semibold text-white"
+				>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						viewBox="0 0 448 512"

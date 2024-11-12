@@ -6,7 +6,7 @@
 
 	let hl = hljs;
 
-	export let id
+	export let id;
 
 	const highlightedContent = hl.highlightAuto(content).value;
 </script>
@@ -21,7 +21,7 @@
 	/>
 </svelte:head>
 
-<RawButton bind:id={id}/>
+<RawButton bind:id />
 <pre class="whitespace-pre-wrap break-words p-3">{@html highlightedContent}</pre>
 
 <style>

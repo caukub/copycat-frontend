@@ -6,7 +6,7 @@
 	hljs.registerLanguage('json', json);
 
 	export let content: string;
-	export let id
+	export let id;
 
 	const highlightedContent = hljs.highlight(content, { language: 'json' }).value;
 </script>
@@ -21,7 +21,7 @@
 	/>
 </svelte:head>
 
-<RawButton bind:id={id}/>
+<RawButton bind:id />
 <pre class="h-full whitespace-pre-wrap break-words p-3">{@html highlightedContent}</pre>
 
 <style>

@@ -34,7 +34,7 @@
 					</a>
 
 					<a
-						href="https://help.hostify.cz"
+						href="https://discord.gg/KWVmdMC"
 						class="flex items-center rounded-md px-3 py-2 font-medium text-white"
 						aria-current="page"
 					>
