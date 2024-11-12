@@ -158,7 +158,7 @@
 
 <pre class="h-full whitespace-pre-wrap break-words px-3">{@html data.content}</pre>
 
-<style class="postcss">
+<style lang="postcss">
 	:global(.i) {
 		@apply text-hostify-blue;
 	}

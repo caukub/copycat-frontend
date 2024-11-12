@@ -41,7 +41,7 @@
 
 
 <noscript>
-	<style>
+	<style lang="postcss">
       :global(.nojs-hide) {
           display: none;
       }

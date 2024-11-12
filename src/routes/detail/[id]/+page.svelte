@@ -10,6 +10,3 @@
 		<SvelteMarkdown source={data.markdown} />
 	</div>
 </div>
-
-<style class="postcss">
-</style>
