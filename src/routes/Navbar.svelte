@@ -54,7 +54,6 @@
 
 					<a
 						href="/"
-						target="_blank"
 						type="button"
 						class="relative inline-flex items-center gap-x-1.5 rounded-md bg-white px-1.5 py-2 font-semibold text-hostify-blue shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-hostify-blue sm:px-3"
 					>
