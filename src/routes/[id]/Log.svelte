@@ -37,6 +37,7 @@
 			<div class="flex items-center text-sm font-semibold">
 				<a
 					href={'/raw/' + data.id}
+					target="_blank"
 					class="flex cursor-pointer rounded-sm bg-white px-1.5 py-0.5 font-bold text-hostify-blue"
 				>
 					<svg

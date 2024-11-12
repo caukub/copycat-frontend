@@ -6,7 +6,7 @@
 	<div class="mx-auto px-3 sm:px-4 sm:px-6 lg:px-8">
 		<div class="flex h-16 justify-between">
 			<div class="flex">
-				<a href="https://paste.hostify.cz" class="flex flex-shrink-0 items-center">
+				<a href="/" class="flex flex-shrink-0 items-center">
 					<img src={logo} alt="Hostify.cz logo" class="h-9 w-auto sm:h-12" />
 				</a>
 			</div>
@@ -53,7 +53,7 @@
 					</a>
 
 					<a
-						href="https://paste.hostify.cz"
+						href="/"
 						type="button"
 						class="relative inline-flex items-center gap-x-1.5 rounded-md bg-white px-1.5 py-2 font-semibold text-hostify-blue shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-hostify-blue sm:px-3"
 					>
