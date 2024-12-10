@@ -84,7 +84,7 @@
 
 <form action="/upload" method="POST" enctype="multipart/form-data">
 	<div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
-		<div class="bd mx-auto max-w-3xl">
+		<div class="bd mx-auto max-w-3xxx">
 			<div class="bb flex items-center justify-between py-3">
 				<p class="ml-3 font-semibold">
 					Vložte log níže <span class="nojs-hide">nebo</span>
