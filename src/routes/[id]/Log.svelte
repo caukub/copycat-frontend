@@ -11,18 +11,6 @@
 				const clickX = event.clientX - line.getBoundingClientRect().left;
 
 				if (clickX < 20) {
-					const highlightColor = 'oklch(95.32% 0.0218 239.43)';
-
-					let previousElement = null;
-
-					if (window.location.hash) {
-						let highlightedElement = document.getElementById(window.location.hash.split('#')[1]);
-						highlightedElement.style.backgroundColor = highlightColor;
-						highlightedElement.scrollIntoView({ behavior: 'smooth' });
-
-						previousElement = highlightedElement;
-					}
-
 					document.addEventListener('click', (event) => {
 						if (event.shiftKey) {
 							showSlideover = !showSlideover;
@@ -50,6 +38,17 @@
 				}
 			});
 		});
+		const highlightColor = 'oklch(95.32% 0.0218 239.43)';
+
+		let previousElement = null;
+
+		if (window.location.hash) {
+			let highlightedElement = document.getElementById(window.location.hash.split('#')[1]);
+			highlightedElement.style.backgroundColor = highlightColor;
+			highlightedElement.scrollIntoView({ behavior: 'smooth' });
+
+			previousElement = highlightedElement;
+		}
 	});
 </script>
 
