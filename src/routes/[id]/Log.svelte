@@ -5,13 +5,44 @@
 
 	let showSlideover = false;
 
-	onMount(() => {
-		window.addEventListener('click', (event) => {
-			if (event.shiftKey) {
-				showSlideover = !showSlideover;
+onMount(() => {
+	const highlightColor = "oklch(95.32% 0.0218 239.43)";
+
+	let previousElement = null;
+
+	if (window.location.hash) {
+		let highlightedElement = document.getElementById(window.location.hash.split("#")[1]);
+		highlightedElement.style.backgroundColor = highlightColor;
+		highlightedElement.scrollIntoView({behavior: "smooth"})
+
+		previousElement = highlightedElement
+	}
+
+	document.addEventListener('click', (event) => {
+		if (event.shiftKey) {
+			showSlideover = !showSlideover;
+		}
+
+		let clickedElement = event.target;
+
+		if (clickedElement.classList[0] === "p") {
+			if (window.location.hash && clickedElement.id === window.location.hash.split("#")[1]) {
+				clickedElement.style.backgroundColor = ""
+				history.replaceState(null, null, window.location.pathname + window.location.search);
+			} else {
+				clickedElement.scrollIntoView();
+				clickedElement.style.backgroundColor = highlightColor;
+				window.location.hash = clickedElement.id;
+
+				if (previousElement && window.location.hash && previousElement.id !== clickedElement.id) {
+					previousElement.style.backgroundColor = "";
+				}
+
+				previousElement = clickedElement;
 			}
-		});
+		}
 	});
+});
 </script>
 
 <Slideover bind:showSlideover id={data.id} />
@@ -78,14 +109,14 @@
 		</div>
 		<p class="text-sm font-semibold leading-8">
 			Minecraft verze: <span
-				class="ml-0.5 rounded-sm bg-white px-1.5 py-1 font-bold text-hostify-blue"
-				>{data['version'] ? data['version'] : 'Neznámá'}</span
-			>
+			class="ml-0.5 rounded-sm bg-white px-1.5 py-1 font-bold text-hostify-blue"
+		>{data['version'] ? data['version'] : 'Neznámá'}</span
+		>
 		</p>
 		<p class="text-sm font-semibold leading-8">
 			Platforma: <span class="ml-0.5 rounded-sm bg-white px-1.5 py-1 font-bold text-hostify-blue"
-				>{data['platform']}</span
-			>
+		>{data['platform']}</span
+		>
 		</p>
 	</div>
 
@@ -122,11 +153,11 @@
 											viewBox="0 0 20 20"
 											fill="currentColor"
 											class="h-5 w-5"
-											><path
-												fill-rule="evenodd"
-												d="M2 10a.75.75 0 01.75-.75h12.59l-2.1-1.95a.75.75 0 111.02-1.1l3.5 3.25a.75.75 0 010 1.1l-3.5 3.25a.75.75 0 11-1.02-1.1l2.1-1.95H2.75A.75.75 0 012 10z"
-												clip-rule="evenodd"
-											/></svg
+										><path
+											fill-rule="evenodd"
+											d="M2 10a.75.75 0 01.75-.75h12.59l-2.1-1.95a.75.75 0 111.02-1.1l3.5 3.25a.75.75 0 010 1.1l-3.5 3.25a.75.75 0 11-1.02-1.1l2.1-1.95H2.75A.75.75 0 012 10z"
+											clip-rule="evenodd"
+										/></svg
 										>
 										<a href={detection.detail} target="_blank">Detail</a>
 									{/if}
@@ -157,32 +188,51 @@
 <pre class="h-full whitespace-pre-wrap break-words px-3">{@html data.content}</pre>
 
 <style lang="postcss">
-	:global(.i) {
-		@apply text-hostify-blue;
-	}
+    :global(.i) {
+        @apply text-hostify-blue;
+    }
 
-	:global(.w) {
-		@apply text-hostify-yellow;
-	}
+    :global(.w) {
+        @apply text-hostify-yellow;
+    }
 
-	:global(.e) {
-		@apply text-hostify-red;
-	}
+    :global(.e) {
+        @apply text-hostify-red;
+    }
 
-	:global(.c) {
-		color: green;
-	}
+    :global(.c) {
+        color: green;
+    }
 
-	:global(.i, .w, .e, .c) {
-		font-weight: 600;
-	}
+    :global(.i, .w, .e, .c) {
+        font-weight: 600;
+    }
 
-	pre {
-		font-size: 0.9rem;
-	}
+    pre {
+        font-size: 0.9rem;
+    }
 
-	.solution {
-		border-left: 4px solid #fff;
-		padding-left: 0.75rem;
-	}
+    pre {
+        counter-reset: line-number;
+    }
+
+    :global(pre .p) {
+        display: block;
+        counter-increment: line-number;
+        position: relative;
+        padding-left: 2em;
+    }
+
+    :global(pre .p::before) {
+        content: counter(line-number);
+        position: absolute;
+        left: 0;
+        color: #888;
+				cursor: pointer;
+    }
+
+    .solution {
+        border-left: 4px solid #fff;
+        padding-left: 0.75rem;
+    }
 </style>
